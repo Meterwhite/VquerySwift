@@ -33,5 +33,5 @@ someView.vqueryByInspector(ofType: UILabel.self, tag: row, accessibilityLabel: "
 
 ## More Details
 - Check out the Demo:
-    - 点击`< > Code`-> Download ZIP
+    - Click`< > Code`-> Download ZIP
     - Open the project `Vquery-demo`
