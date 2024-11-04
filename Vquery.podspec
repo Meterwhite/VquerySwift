@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Vquery"
-  s.version      = "4.0.4"
+  s.version      = "4.0.5"
   s.summary      = 'Vquery provides a query service for views under UIKit in Swift.'
   s.homepage     = 'https://github.com/Meterwhite/VquerySwift'
   s.license      = 'MIT'
@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.swift_version = '5.0'
   s.source       = { :git => "https://github.com/Meterwhite/VquerySwift.git", :tag => s.version }
-  s.source_files  = 'Vquery/*.{swift}'
+  s.source_files  = 'Sources/Vquery/*.{swift}'
 end

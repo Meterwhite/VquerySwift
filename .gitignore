@@ -1,12 +1,7 @@
 # Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-
-## Build generated
+.DS_Store
 build/
-DerivedData
-
-## Various settings
+DerivedData/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -16,41 +11,52 @@ DerivedData
 *.perspectivev3
 !default.perspectivev3
 xcuserdata
-.DS_Store
-
-## Other
 *.xccheckout
 *.moved-aside
 *.xcuserstate
-*.xcscmblueprint
 
-## Obj-C/Swift specific
-*.hmap
-*.ipa
+# SwiftPM
+.build/
+Packages
+Package.pins
 
 # CocoaPods
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
-# Pods/
-
+Pods/
+Podfile.lock
 # Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
 Carthage/Build
+# Accio dependency management
+Dependencies/
+.accio/
 
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the 
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://github.com/fastlane/fastlane/blob/master/docs/Gitignore.md
-
+# Fastlane
 fastlane/report.xml
+fastlane/Preview.html
 fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
 
-Build/
+# Swift Packages
+.swiftpm/
+*.xcodeproj/xcuserdata/
+
+# User-specific files
+*.swp
+*.swo
+*~
+# Generated files
+.idea
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+.swiftpm
+Package.resolved
+
+# Add any other files and directories you'd like to ignore here
