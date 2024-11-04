@@ -1,11 +1,12 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.3
 
 import PackageDescription
 
 let package = Package(
     name: "Vquery",
     platforms: [
-        .iOS(.v12)
+        .iOS(.v12),
+        .macOS(.v10_14)
     ],
     products: [
         .library(
@@ -14,6 +15,8 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Vquery"),
+            name: "Vquery",
+            path: "Sources"
+        ),
     ]
 )

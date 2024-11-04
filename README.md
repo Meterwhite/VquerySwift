@@ -1,6 +1,6 @@
 # Swift View Query
 ## Vquery Features
-* Vquery provides a query service for views under UIKit in Swift.
+* Vquery provides a query service for views under UIKit and AppKit in Swift.
 * Vquery supports xib layouts well.
 * Supports SPM and CocoaPods management.
 

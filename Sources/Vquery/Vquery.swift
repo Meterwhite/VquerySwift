@@ -1,13 +1,19 @@
 //
 //  Vquery.swift
-//  Version 1.0.0
+//  Version 4.0.6
 //
 //  Created by meterwhite on 2024/10/15.
 //
 
 
 import Foundation
+#if canImport(UIKit)
 import UIKit
+public typealias AppleView = UIView
+#elseif canImport(AppKit)
+import AppKit
+public typealias AppleView = NSView
+#endif
 
 /*
  Vquery provides a querying service for views under UIKit in Swift. Its design goal is to reduce repetitive code in scenarios with numerous controls.
@@ -27,15 +33,15 @@ import UIKit
     view.vquery { .. }.vquery { .. }
  
  Principles behind Vquery:
-    Vquery extends UIView and Array<UIView> with extension methods, making them compatible with higher-order functions like map.
-    Extension methods in UIView ultimately call extension methods in Array<UIView>. The methods in Array<UIView> handle queries and return the appropriate collection types.
+    Vquery extends AppleView and Array<AppleView> with extension methods, making them compatible with higher-order functions like map.
+    Extension methods in AppleView ultimately call extension methods in Array<AppleView>. The methods in Array<AppleView> handle queries and return the appropriate collection types.
  
  Design of Vquery parameters:
     Each parameter in Vquery methods is designed to represent a dimension of information for locating a view.
  
  */
 
-public extension UIView {
+public extension AppleView {
     
     /// Queries the current view and its subviews by matching type `ofType` and condition `condition`.
     /// - Parameters:
@@ -43,8 +49,8 @@ public extension UIView {
     ///   - through: Determines search behavior; if true, continues searching subviews after a match. Default is false.
     ///   - condition: Condition to match; if nil, all subviews are queried, and any value of through is irrelevant.
     /// - Returns: Query results
-    func vquery<T: UIView> (
-        ofType: T.Type = UIView.self,
+    func vquery<T: AppleView> (
+        ofType: T.Type = AppleView.self,
         through: Bool = false,
         condition: ((T) -> Bool)? = nil
     ) -> [T] {
@@ -72,8 +78,8 @@ public extension UIView {
     ///   - through: Determines search behavior; if true, continues searching subviews after a match. Default is false.
     ///   - condition: Condition to match; if nil, all subviews are queried, and any value of through is irrelevant.
     /// - Returns: Query results
-    func vqueryByInspector<T: UIView> (
-        ofType: T.Type = UIView.self,
+    func vqueryByInspector<T: AppleView> (
+        ofType: T.Type = AppleView.self,
         tag: Int? = nil,
         restorationIdentifier: String? = nil,
         accessibilityIdentifier: String? = nil,
@@ -94,8 +100,8 @@ public extension UIView {
     }
     
     /// Queries an item in the current view and its subviews by matching index. Non-recursive. Returns an empty collection if the index is invalid.
-    func vqueryByIndex<T: UIView>(
-        ofType: T.Type = UIView.self,
+    func vqueryByIndex<T: AppleView>(
+        ofType: T.Type = AppleView.self,
         index: Int
     ) -> [T] {
         
@@ -103,8 +109,8 @@ public extension UIView {
     }
     
     /// Queries the matching superviews in the collection.
-    func vquerySuper<T: UIView> (
-        ofType: T.Type = UIView.self,
+    func vquerySuper<T: AppleView> (
+        ofType: T.Type = AppleView.self,
         condition: ((T) -> Bool)? = nil
     ) -> [T] {
         
@@ -112,8 +118,8 @@ public extension UIView {
     }
     
     /// Similar to vqueryByInspector, this method is used to query sibling views.
-    func vquerySiblingByInspector<T: UIView>(
-        ofType: T.Type = UIView.self,
+    func vquerySiblingByInspector<T: AppleView>(
+        ofType: T.Type = AppleView.self,
         tag: Int? = nil,
         restorationIdentifier: String? = nil,
         accessibilityIdentifier: String? = nil,
@@ -132,8 +138,8 @@ public extension UIView {
     }
     
     /// Queries sibling views at the same hierarchy level in the current view and its subviews.
-    func vquerySibling<T: UIView>(
-        ofType: T.Type = UIView.self,
+    func vquerySibling<T: AppleView>(
+        ofType: T.Type = AppleView.self,
         condition: ((T) -> Bool)? = nil
     ) -> [T] {
         
@@ -146,7 +152,7 @@ public extension UIView {
     }
 }
 
-public extension Array where Element: UIView {
+public extension Array where Element: AppleView {
     
     /// Queries the views in the collection and their subviews by matching type `ofType` and condition `condition`.
     /// - Parameters:
@@ -154,13 +160,13 @@ public extension Array where Element: UIView {
     ///   - through: Determines search behavior; if true, continues searching subviews after a match. Default is false.
     ///   - condition: Condition to match; if nil, all subviews are queried, and any value of through is irrelevant.
     /// - Returns: Query results
-    func vquery<T: UIView>(
-        ofType: T.Type = UIView.self,
+    func vquery<T: AppleView>(
+        ofType: T.Type = AppleView.self,
         through: Bool = false,
         condition: ((T) -> Bool)? = nil
     ) -> [T] {
         var result: [T] = []
-        var stack: [UIView] = self
+        var stack: [AppleView] = self
         while !stack.isEmpty {
             let view = stack.removeLast()
             if let match = view as? T, condition?(match) ?? true {
@@ -188,8 +194,8 @@ public extension Array where Element: UIView {
     ///   - through: Determines search behavior; if true, continues searching subviews after a match. Default is false.
     ///   - condition: Condition to match; if nil, all subviews are queried, and any value of through is irrelevant.
     /// - Returns: Query results
-    func vqueryByInspector<T: UIView>(
-        ofType: T.Type = UIView.self,
+    func vqueryByInspector<T: AppleView>(
+        ofType: T.Type = AppleView.self,
         tag: Int? = nil,
         restorationIdentifier: String? = nil,
         accessibilityIdentifier: String? = nil,
@@ -213,12 +219,12 @@ public extension Array where Element: UIView {
     }
     
     /// Queries an item in the subviews of views in the collection by matching index. Non-recursive. Returns an empty collection if the index is invalid.
-    func vqueryByIndex<T: UIView>(
-        ofType: T.Type = UIView.self,
+    func vqueryByIndex<T: AppleView>(
+        ofType: T.Type = AppleView.self,
         index: Int
     ) -> [T] {
         
-        let views: [UIView] = self
+        let views: [AppleView] = self
         if views.indices.contains(index), let view = views[index] as? T {
             return [view]
         }
@@ -226,8 +232,8 @@ public extension Array where Element: UIView {
     }
     
     /// Queries the matching superviews in the collection.
-    func vquerySuper<T: UIView>(
-        ofType: T.Type = UIView.self,
+    func vquerySuper<T: AppleView>(
+        ofType: T.Type = AppleView.self,
         condition: ((T) -> Bool)? = nil
     ) -> [T] {
         
@@ -247,8 +253,8 @@ public extension Array where Element: UIView {
     }
     
     /// Queries sibling views at the same hierarchy level in the current view and its subviews.
-    func vquerySibling<T: UIView>(
-        ofType: T.Type = UIView.self,
+    func vquerySibling<T: AppleView>(
+        ofType: T.Type = AppleView.self,
         condition: ((T) -> Bool)? = nil
     ) -> [T] {
         
@@ -265,8 +271,8 @@ public extension Array where Element: UIView {
     }
     
     /// Similar to vqueryByInspector, this method is used to query sibling views.
-    func vquerySiblingByInspector<T: UIView>(
-        ofType: T.Type = UIView.self as! T.Type,
+    func vquerySiblingByInspector<T: AppleView>(
+        ofType: T.Type = AppleView.self as! T.Type,
         tag: Int? = nil,
         restorationIdentifier: String? = nil,
         accessibilityIdentifier: String? = nil,
