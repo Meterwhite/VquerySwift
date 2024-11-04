@@ -35,7 +35,7 @@ import UIKit
  
  */
 
-extension UIView {
+public extension UIView {
     
     /// Queries the current view and its subviews by matching type `ofType` and condition `condition`.
     /// - Parameters:
@@ -146,7 +146,7 @@ extension UIView {
     }
 }
 
-extension Array where Element: UIView {
+public extension Array where Element: UIView {
     
     /// Queries the views in the collection and their subviews by matching type `ofType` and condition `condition`.
     /// - Parameters:

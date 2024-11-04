@@ -14,8 +14,6 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Vquery",
-            exclude: ["README.md", "LICENSE"]
-        ),
+            name: "Vquery"),
     ]
 )

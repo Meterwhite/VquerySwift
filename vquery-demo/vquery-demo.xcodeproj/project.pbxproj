@@ -3,41 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C0185BD2CC9402800C1182C /* Vquery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0185BB2CC9402800C1182C /* Vquery.swift */; };
+		6EF6B1E72CD8B73B00F9ED8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6B1E62CD8B73B00F9ED8B /* AppDelegate.swift */; };
+		6EF6B1E92CD8B73B00F9ED8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6B1E82CD8B73B00F9ED8B /* SceneDelegate.swift */; };
+		6EF6B1EB2CD8B73B00F9ED8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6B1EA2CD8B73B00F9ED8B /* ViewController.swift */; };
+		6EF6B1EE2CD8B73B00F9ED8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF6B1EC2CD8B73B00F9ED8B /* Main.storyboard */; };
+		6EF6B1F02CD8B73F00F9ED8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF6B1EF2CD8B73F00F9ED8B /* Assets.xcassets */; };
+		6EF6B1F32CD8B73F00F9ED8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF6B1F12CD8B73F00F9ED8B /* LaunchScreen.storyboard */; };
+		6EF6B2012CD8BBA400F9ED8B /* Vquery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6B2002CD8BBA400F9ED8B /* Vquery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8C0185A32CC9400400C1182C /* Vquery-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vquery-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C0185BB2CC9402800C1182C /* Vquery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vquery.swift; sourceTree = "<group>"; };
+		6EF6B1E32CD8B73B00F9ED8B /* vquery-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vquery-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EF6B1E62CD8B73B00F9ED8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6EF6B1E82CD8B73B00F9ED8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6EF6B1EA2CD8B73B00F9ED8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6EF6B1ED2CD8B73B00F9ED8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6EF6B1EF2CD8B73F00F9ED8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6EF6B1F22CD8B73F00F9ED8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6EF6B1F42CD8B73F00F9ED8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EF6B2002CD8BBA400F9ED8B /* Vquery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vquery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		8C0185B52CC9400400C1182C /* Exceptions for "Vquery-demo" folder in "Vquery-demo" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 8C0185A22CC9400400C1182C /* Vquery-demo */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		8C0185A52CC9400400C1182C /* Vquery-demo */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				8C0185B52CC9400400C1182C /* Exceptions for "Vquery-demo" folder in "Vquery-demo" target */,
-			);
-			path = "Vquery-demo";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
-		8C0185A02CC9400400C1182C /* Frameworks */ = {
+		6EF6B1E02CD8B73B00F9ED8B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,178 +39,147 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8C01859A2CC9400400C1182C = {
+		6EF6B1DA2CD8B73B00F9ED8B = {
 			isa = PBXGroup;
 			children = (
-				8C0185BC2CC9402800C1182C /* Vquery */,
-				8C0185A52CC9400400C1182C /* Vquery-demo */,
-				8C0185A42CC9400400C1182C /* Products */,
+				6EF6B1E52CD8B73B00F9ED8B /* vquery-demo */,
+				6EF6B1E42CD8B73B00F9ED8B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8C0185A42CC9400400C1182C /* Products */ = {
+		6EF6B1E42CD8B73B00F9ED8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C0185A32CC9400400C1182C /* Vquery-demo.app */,
+				6EF6B1E32CD8B73B00F9ED8B /* vquery-demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8C0185BC2CC9402800C1182C /* Vquery */ = {
+		6EF6B1E52CD8B73B00F9ED8B /* vquery-demo */ = {
 			isa = PBXGroup;
 			children = (
-				8C0185BB2CC9402800C1182C /* Vquery.swift */,
+				6EF6B1FF2CD8BBA400F9ED8B /* Vquery */,
+				6EF6B1E62CD8B73B00F9ED8B /* AppDelegate.swift */,
+				6EF6B1E82CD8B73B00F9ED8B /* SceneDelegate.swift */,
+				6EF6B1EA2CD8B73B00F9ED8B /* ViewController.swift */,
+				6EF6B1EC2CD8B73B00F9ED8B /* Main.storyboard */,
+				6EF6B1EF2CD8B73F00F9ED8B /* Assets.xcassets */,
+				6EF6B1F12CD8B73F00F9ED8B /* LaunchScreen.storyboard */,
+				6EF6B1F42CD8B73F00F9ED8B /* Info.plist */,
+			);
+			path = "vquery-demo";
+			sourceTree = "<group>";
+		};
+		6EF6B1FF2CD8BBA400F9ED8B /* Vquery */ = {
+			isa = PBXGroup;
+			children = (
+				6EF6B2002CD8BBA400F9ED8B /* Vquery.swift */,
 			);
 			name = Vquery;
-			path = ../Vquery;
-			sourceTree = SOURCE_ROOT;
+			path = ../../Sources/Vquery;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8C0185A22CC9400400C1182C /* Vquery-demo */ = {
+		6EF6B1E22CD8B73B00F9ED8B /* vquery-demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C0185B62CC9400400C1182C /* Build configuration list for PBXNativeTarget "Vquery-demo" */;
+			buildConfigurationList = 6EF6B1F72CD8B73F00F9ED8B /* Build configuration list for PBXNativeTarget "vquery-demo" */;
 			buildPhases = (
-				8C01859F2CC9400400C1182C /* Sources */,
-				8C0185A02CC9400400C1182C /* Frameworks */,
-				8C0185A12CC9400400C1182C /* Resources */,
+				6EF6B1DF2CD8B73B00F9ED8B /* Sources */,
+				6EF6B1E02CD8B73B00F9ED8B /* Frameworks */,
+				6EF6B1E12CD8B73B00F9ED8B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				8C0185A52CC9400400C1182C /* Vquery-demo */,
-			);
-			name = "Vquery-demo";
-			packageProductDependencies = (
-			);
-			productName = "Vquery-demo";
-			productReference = 8C0185A32CC9400400C1182C /* Vquery-demo.app */;
+			name = "vquery-demo";
+			productName = "vquery-demo";
+			productReference = 6EF6B1E32CD8B73B00F9ED8B /* vquery-demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8C01859B2CC9400400C1182C /* Project object */ = {
+		6EF6B1DB2CD8B73B00F9ED8B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
-					8C0185A22CC9400400C1182C = {
-						CreatedOnToolsVersion = 16.0;
+					6EF6B1E22CD8B73B00F9ED8B = {
+						CreatedOnToolsVersion = 15.1;
 					};
 				};
 			};
-			buildConfigurationList = 8C01859E2CC9400400C1182C /* Build configuration list for PBXProject "Vquery-demo" */;
+			buildConfigurationList = 6EF6B1DE2CD8B73B00F9ED8B /* Build configuration list for PBXProject "vquery-demo" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 8C01859A2CC9400400C1182C;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
-			productRefGroup = 8C0185A42CC9400400C1182C /* Products */;
+			mainGroup = 6EF6B1DA2CD8B73B00F9ED8B;
+			productRefGroup = 6EF6B1E42CD8B73B00F9ED8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8C0185A22CC9400400C1182C /* Vquery-demo */,
+				6EF6B1E22CD8B73B00F9ED8B /* vquery-demo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8C0185A12CC9400400C1182C /* Resources */ = {
+		6EF6B1E12CD8B73B00F9ED8B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF6B1F32CD8B73F00F9ED8B /* LaunchScreen.storyboard in Resources */,
+				6EF6B1F02CD8B73F00F9ED8B /* Assets.xcassets in Resources */,
+				6EF6B1EE2CD8B73B00F9ED8B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8C01859F2CC9400400C1182C /* Sources */ = {
+		6EF6B1DF2CD8B73B00F9ED8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C0185BD2CC9402800C1182C /* Vquery.swift in Sources */,
+				6EF6B1EB2CD8B73B00F9ED8B /* ViewController.swift in Sources */,
+				6EF6B1E72CD8B73B00F9ED8B /* AppDelegate.swift in Sources */,
+				6EF6B1E92CD8B73B00F9ED8B /* SceneDelegate.swift in Sources */,
+				6EF6B2012CD8BBA400F9ED8B /* Vquery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		6EF6B1EC2CD8B73B00F9ED8B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EF6B1ED2CD8B73B00F9ED8B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6EF6B1F12CD8B73F00F9ED8B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EF6B1F22CD8B73F00F9ED8B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		8C0185B72CC9400400C1182C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Vquery-demo/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Vquery-Demo";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "swift.Vquery-demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		8C0185B82CC9400400C1182C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Vquery-demo/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Vquery-Demo";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "swift.Vquery-demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		8C0185B92CC9400400C1182C /* Debug */ = {
+		6EF6B1F52CD8B73F00F9ED8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -270,7 +231,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -281,7 +242,7 @@
 			};
 			name = Debug;
 		};
-		8C0185BA2CC9400400C1182C /* Release */ = {
+		6EF6B1F62CD8B73F00F9ED8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -327,7 +288,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -337,28 +298,86 @@
 			};
 			name = Release;
 		};
+		6EF6B1F82CD8B73F00F9ED8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "vquery-demo/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = demo.vquery.swift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6EF6B1F92CD8B73F00F9ED8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "vquery-demo/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = demo.vquery.swift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8C01859E2CC9400400C1182C /* Build configuration list for PBXProject "Vquery-demo" */ = {
+		6EF6B1DE2CD8B73B00F9ED8B /* Build configuration list for PBXProject "vquery-demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C0185B92CC9400400C1182C /* Debug */,
-				8C0185BA2CC9400400C1182C /* Release */,
+				6EF6B1F52CD8B73F00F9ED8B /* Debug */,
+				6EF6B1F62CD8B73F00F9ED8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C0185B62CC9400400C1182C /* Build configuration list for PBXNativeTarget "Vquery-demo" */ = {
+		6EF6B1F72CD8B73F00F9ED8B /* Build configuration list for PBXNativeTarget "vquery-demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C0185B72CC9400400C1182C /* Debug */,
-				8C0185B82CC9400400C1182C /* Release */,
+				6EF6B1F82CD8B73F00F9ED8B /* Debug */,
+				6EF6B1F92CD8B73F00F9ED8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8C01859B2CC9400400C1182C /* Project object */;
+	rootObject = 6EF6B1DB2CD8B73B00F9ED8B /* Project object */;
 }

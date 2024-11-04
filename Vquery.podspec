@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Vquery"
-  s.version      = "4.0.3"
+  s.version      = "4.0.4"
   s.summary      = 'Vquery provides a query service for views under UIKit in Swift.'
   s.homepage     = 'https://github.com/Meterwhite/VquerySwift'
   s.license      = 'MIT'
