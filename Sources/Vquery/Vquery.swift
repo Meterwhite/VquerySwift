@@ -1,6 +1,6 @@
 //
 //  Vquery.swift
-//  Version 4.0.6
+//  Version 4.0.7
 //
 //  Created by meterwhite on 2024/10/15.
 //
@@ -16,7 +16,7 @@ public typealias AppleView = NSView
 #endif
 
 /*
- Vquery provides a querying service for views under UIKit in Swift. Its design goal is to reduce repetitive code in scenarios with numerous controls.
+ Vquery provides a query service for views in both UIKit and AppKit for Swift. Its design goal is to reduce repetitive code in scenarios with numerous controls.
  
  1. Vquery methods are similar to map methods:
     view.vquery { $0.tag == 2024 }
@@ -58,6 +58,8 @@ public extension AppleView {
         return [self].vquery(ofType: ofType, through: through, condition: condition)
     }
     
+#if canImport(UIKit)
+    
     /// Queries the views in the collection and their subviews by matching type `ofType` and condition `condition`.
     ///
     /// This method is customized for xib queries, associating properties with the query panel's `Attributes inspector` (`tag`) and the panel's `Identity Inspector` (`restorationIdentifier`, `accessibilityLabel`, `accessibilityHint`).
@@ -98,6 +100,40 @@ public extension AppleView {
                                         through: through,
                                         condition: condition)
     }
+#elseif canImport(AppKit)
+    
+    /// Queries the views in the collection and their subviews by matching type `ofType` and condition `condition`.
+    ///
+    /// This method is customized for xib queries, associating properties with the query panel's `Attributes inspector` (`tag`) and the panel's `Identity Inspector` (`identifier`).
+    /// Note that `restorationIdentifier` is unique in the xib editor.
+    ///
+    /// Generally, restorationIdentifier can be a unique identifier for the view.
+    /// accessibilityLabel and accessibilityIdentifier can be repeated and used as identifiers for a class of views.
+    /// Example:
+    /// stackView.vqueryByInspector(ofType: UILabel.self)
+    ///
+    /// - Parameters:
+    ///   - ofType: Type to match.
+    ///   - tag: This property supports visual editing in the `Attributes Inspector` panel.
+    ///   - identifier: This property supports visual editing in the `Identity Inspector` panel.
+    ///   - through: Determines search behavior; if true, continues searching subviews after a match. Default is false.
+    ///   - condition: Condition to match; if nil, all subviews are queried, and any value of through is irrelevant.
+    /// - Returns: Query results
+    func vqueryByInspector<T: AppleView> (
+        ofType: T.Type = AppleView.self,
+        tag: Int? = nil,
+        identifier: String? = nil,
+        through: Bool = false,
+        condition: ((T) -> Bool)? = nil
+    ) -> [T]  {
+        
+        return [self].vqueryByInspector(ofType: ofType,
+                                        tag: tag,
+                                        identifier: identifier,
+                                        through: through,
+                                        condition: condition)
+    }
+#endif
     
     /// Queries an item in the current view and its subviews by matching index. Non-recursive. Returns an empty collection if the index is invalid.
     func vqueryByIndex<T: AppleView>(
@@ -116,6 +152,8 @@ public extension AppleView {
         
         return [self].vquerySuper(ofType: ofType, condition: condition)
     }
+    
+#if canImport(UIKit)
     
     /// Similar to vqueryByInspector, this method is used to query sibling views.
     func vquerySiblingByInspector<T: AppleView>(
@@ -136,6 +174,22 @@ public extension AppleView {
                                                accessibilityHint: accessibilityHint,
                                                condition: condition)
     }
+#elseif canImport(AppKit)
+    
+    /// Similar to vqueryByInspector, this method is used to query sibling views.
+    func vquerySiblingByInspector<T: AppleView>(
+        ofType: T.Type = AppleView.self,
+        tag: Int? = nil,
+        identifier: String? = nil,
+        condition: ((T) -> Bool)? = nil
+    ) -> [T]  {
+        
+        return [self].vquerySiblingByInspector(ofType: ofType,
+                                               tag: tag,
+                                               identifier: identifier,
+                                               condition: condition)
+    }
+#endif
     
     /// Queries sibling views at the same hierarchy level in the current view and its subviews.
     func vquerySibling<T: AppleView>(
@@ -180,6 +234,7 @@ public extension Array where Element: AppleView {
         return result
     }
     
+#if canImport(UIKit)
     /// Queries the views in the collection and their subviews by matching type `ofType` and condition `condition`.
     ///
     /// This method is customized for xib queries, associating properties with the query panel's `Attributes inspector` (`tag`) and the panel's `Identity Inspector` (`restorationIdentifier`, `accessibilityLabel`, `accessibilityHint`).
@@ -217,6 +272,34 @@ public extension Array where Element: AppleView {
             return true
         }
     }
+    
+#elseif canImport(AppKit)
+    
+    /// Queries the views in the collection and their subviews by matching type `ofType` and condition `condition`.
+    /// - Parameters:
+    ///   - ofType: Type to match.
+    ///   - tag: This property supports visual editing in the `Attributes Inspector` panel.
+    ///   - identifier: This property supports visual editing in the `Identity Inspector` panel.
+    ///   - through: Determines search behavior; if true, continues searching subviews after a match. Default is false.
+    ///   - condition: Condition to match; if nil, all subviews are queried, and any value of through is irrelevant.
+    /// - Returns: Query results
+    func vqueryByInspector<T: AppleView>(
+        ofType: T.Type = AppleView.self,
+        tag: Int? = nil,
+        identifier: String? = nil,
+        through: Bool = false,
+        condition: ((T) -> Bool)? = nil
+    ) -> [T] {
+        return vquery(ofType: ofType, through: through) { view in
+            guard (tag == nil || view.tag == tag),
+                  (identifier == nil || view.identifier?.rawValue == identifier),
+                  condition?(view) ?? true else {
+                return false
+            }
+            return true
+        }
+    }
+#endif
     
     /// Queries an item in the subviews of views in the collection by matching index. Non-recursive. Returns an empty collection if the index is invalid.
     func vqueryByIndex<T: AppleView>(
@@ -270,6 +353,8 @@ public extension Array where Element: AppleView {
         return result
     }
     
+#if canImport(UIKit)
+    
     /// Similar to vqueryByInspector, this method is used to query sibling views.
     func vquerySiblingByInspector<T: AppleView>(
         ofType: T.Type = AppleView.self as! T.Type,
@@ -300,6 +385,33 @@ public extension Array where Element: AppleView {
         }
         return result
     }
+#elseif canImport(AppKit)
+    
+    /// Similar to vqueryByInspector, this method is used to query sibling views.
+    func vquerySiblingByInspector<T: AppleView>(
+        ofType: T.Type = AppleView.self as! T.Type,
+        tag: Int? = nil,
+        identifier: String? = nil,
+        condition: ((T) -> Bool)? = nil
+    ) -> [T] {
+        
+        var result: [T] = []
+        for view in self {
+            guard let superview = view.superview else { continue }
+            for sibling in superview.subviews where sibling !== view {
+                guard (tag == nil || sibling.tag == tag),
+                      (sibling.identifier?.rawValue == identifier),
+                      condition?(sibling as! T) ?? true else {
+                    continue
+                }
+                if let match = sibling as? T {
+                    result.append(match)
+                }
+            }
+        }
+        return result
+    }
+#endif
     
     /// Queries the indices of the views in the collection within their parent views.
     func vqueryIndex() -> [Int] {
